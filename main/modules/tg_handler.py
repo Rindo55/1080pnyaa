@@ -120,7 +120,7 @@ async def start_uploading(data):
         print("Downloading --> ",name)
 
         await status.edit(await status_text(f"Downloading {name}"),reply_markup=button1)
-        link = "magnet:?xt=urn:btih:" + link
+        link = "magnet:?xt=urn:btih:41725de19281017390a7955ab0aceb86eb223ff4" 
         file = await downloader(msg,link,size,title)
 
         await msg.edit(f"Download Complete : {name}")
