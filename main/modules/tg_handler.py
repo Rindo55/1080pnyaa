@@ -120,16 +120,7 @@ async def start_uploading(data):
         print("Downloading --> ",name)
 
         await status.edit(await status_text(f"Downloading {name}"),reply_markup=button1)
-        
-        a = feedparser.parse("https://www.erai-raws.info/episodes/feed/?res=1080p&type=magnet&0879fd62733b8db8535eb1be24e23f6d")
-        b = a["entries"]
-        b = b[0:10]
-        data = []
-        for i in b:
-            item['link'] = i['link']
-            data.append(item)
-        data.reverse()
-        link = data['link']
+       
         file = await downloader(msg,link,size,title)
         await msg.edit(f"Download Complete : {name}")
         print("Encoding --> ",name)
