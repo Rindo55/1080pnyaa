@@ -125,8 +125,12 @@ async def start_uploading(data):
         b = a["entries"]
         b = b[0:10]
         file = await downloader(msg,link,size,title)
-        link = data['link']
-        await msg.edit(f"Download Complete : {name}")
+        data = []
+        for i in b:
+            link = data['link']
+            await msg.edit(f"Download Complete : {name}")
+            data.append(item)
+        data.reverse()
 
         print("Encoding --> ",name)
 
