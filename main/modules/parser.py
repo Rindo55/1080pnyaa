@@ -17,16 +17,16 @@ def trim_title(title: str):
     return title
 
 def parse():
-    a = feedparser.parse("https://subsplease.org/rss/?r=1080")
+    a = feedparser.parse("https://nyaa.si/?page=rss&q=subsplease%201080p")
     b = a["entries"]
     b = b[0:10]
     data = []    
-
+    mag = "magnet:?xt=urn:btih:"
     for i in b:
         item = {}
         item['title'] = trim_title(i['title'])
-        item['size'] = i['subsplease_size']
-        item['link'] = i['link']
+        item['size'] = i['nyaa_size']
+        item['link'] = mag + i['link']
         data.append(item)
     data.reverse()
     return data
