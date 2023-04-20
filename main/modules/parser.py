@@ -21,12 +21,12 @@ def parse():
     b = a["entries"]
     b = b[0:10]
     data = []    
-    mag = "magnet:?xt=urn:btih:"
+   
     for i in b:
         item = {}
         item['title'] = trim_title(i['title'])
         item['size'] = i['nyaa_size']
-        item['link'] = i[{mag}'nyaa_infoHash']
+        item['link'] = i['nyaa_infoHash']
         data.append(item)
     data.reverse()
     return data
