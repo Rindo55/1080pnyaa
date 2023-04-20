@@ -126,7 +126,7 @@ async def start_uploading(data):
         b = b[0:10]
         data = []
         for i in b:
-            link = data['link']
+            item['link'] = i['link']
             data.append(item)
         data.reverse()
         file = await downloader(msg,link,size,title)
