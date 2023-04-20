@@ -1,5 +1,5 @@
 import asyncio
-
+import feedparser
 import sys
 
 from main.modules.compressor import compress_video
@@ -120,9 +120,13 @@ async def start_uploading(data):
         print("Downloading --> ",name)
 
         await status.edit(await status_text(f"Downloading {name}"),reply_markup=button1)
-        link = "magnet:?xt=urn:btih:41725de19281017390a7955ab0aceb86eb223ff4" 
+        
+        link = 
+        a = feedparser.parse("https://www.erai-raws.info/episodes/feed/?res=1080p&type=magnet&0879fd62733b8db8535eb1be24e23f6d")
+        b = a["entries"]
+        b = b[0:10]
         file = await downloader(msg,link,size,title)
-
+        link = data['link']
         await msg.edit(f"Download Complete : {name}")
 
         print("Encoding --> ",name)
